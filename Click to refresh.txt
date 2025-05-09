@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Click to Refresh</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  body {
+    flex-direction: column;
+  }
+  button {
+    background: linear-gradient(45deg, #fbb034, #ffdd00);
+    border: none;
+    border-radius: 18px;
+    padding: 20px 50px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    box-shadow: 0 10px 20px rgba(251, 176, 52, 0.5);
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    max-width: 90vw;
+    text-align: center;
+  }
+  button:active {
+    box-shadow: 0 4px 10px rgba(251, 176, 52, 0.7);
+    transform: scale(0.95);
+  }
+  h1 {
+    color: white;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    user-select: none;
+  }
+  /* Responsive to max 350px width and max 600px height */
+  @media (max-width: 350px) {
+    button {
+      font-size: 1.8rem;
+      padding: 16px 40px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-height: 600px) {
+    body {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Click the button to Refresh</h1>
+  <button id="refreshBtn" aria-label="Refresh page button">Refresh</button>
+
+<script>
+  const btn = document.getElementById('refreshBtn');
+  btn.addEventListener('click', () => {
+    // Reload the page when clicked
+    location.reload();
+  });
+</script>
+</body>
+</html>
